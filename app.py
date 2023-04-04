@@ -30,4 +30,4 @@ def predict():
     return jsonify(response)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    flask_app.run(debug=True)
