@@ -22,14 +22,29 @@ def Home():
 
 def predict():
     data = request.get_json()
-    input_data = [data['input_1'], data['input_2'], data['input_3'], data['input_4'], data['input_5'], data['input_6'], data['input_7'], data['input_8'], data['input_9'], data['input_10'], data['input_11'], data['input_12'], data['input_13'], data['input_14'], data['input_15'], data['input_16'], data['input_17'], data['input_18']]
-    print("Input data:", input_data)
+    input_data = [    float(data['input_1']),
+        float(data['input_2']),
+        float(data['input_3']),
+        float(data['input_4']),
+        float(data['input_5']),
+        float(data['input_6']),
+        float(data['input_7']),
+        float(data['input_8']),
+        float(data['input_9']),
+        float(data['input_10']),
+        float(data['input_11']),
+        float(data['input_12']),
+        float(data['input_13']),
+        float(data['input_14']),
+        float(data['input_15']),
+        float(data['input_16']),
+        float(data['input_17']),
+        float(data['input_18'])
+]
 
-    float_data = []
-    for item in input_data:
-        float_data.append(float(item))
-    print(float_data)
-    features = [np.array(float_data)]
+    print("Input data:", input_data)
+    features = [np.array(input_data)]
+    print(features)
     prediction = model.predict(features)
     print("Prediction:", prediction)
     if prediction[0]==0:
