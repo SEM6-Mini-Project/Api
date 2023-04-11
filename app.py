@@ -30,8 +30,6 @@ def predict():
         float_data.append(float(item))
     print(float_data)
     features = [np.array(float_data)]
-    # input_array = np.array(features).reshape(1, -1)
-    # input_array = np.array(input_data).reshape(1, -1)
     prediction = model.predict(features)
     print("Prediction:", prediction)
     if prediction[0]==0:
